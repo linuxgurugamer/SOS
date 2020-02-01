@@ -59,9 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actions.cs" />
+    <Compile Include="AssemblyVersion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyVersion.tt</DependentUpon>
+    </Compile>
     <Compile Include="Axes.cs" />
     <Compile Include="Editor.cs" />
     <Compile Include="Events.cs" />
+    <Compile Include="InstallChecker.cs" />
     <Compile Include="RegisterToolbar.cs" />
     <Compile Include="SOS.cs" />
     <Compile Include="KRASHWrapper.cs" />
@@ -71,6 +77,15 @@
     <Compile Include="Settings.cs" />
     <Compile Include="Staging.cs" />
     <Compile Include="VesselInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AssemblyVersion.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyVersion.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
