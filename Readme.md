@@ -1,5 +1,6 @@
 SOS (Save Our Settings)
-Forum page: https://forum.kerbalspaceprogram.com/index.php?/topic/191312-*
+Forum page:  https://forum.kerbalspaceprogram.com/index.php?/topic/191312-18x-sos-
+           
 
 I've always been frustrated by making changes to staging on the launchpad, 
 and then losing those changes when reverting to the editor.  Ergo, this mod.
