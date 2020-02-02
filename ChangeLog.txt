@@ -2,3 +2,11 @@ ChangeLog
 
 0.0.0.1
 	Initial public beta
+	Fully localized
+		Following languages via Google Translate, corrections will be appreciated
+			Spanish (es-es)
+			French (fr-fr)
+			Italian (it-it)
+			Russian (ru-ru)
+	Special debugging code invoked by toolbar button, dumps vessel data to Player.Log
+			

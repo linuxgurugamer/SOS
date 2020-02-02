@@ -1,10 +1,6 @@
-﻿using System.Collections;
-using System.IO;
-using System.Collections.Generic;
+﻿using System.IO;
 using UnityEngine;
-using KSP_Log;
 using KSP.Localization;
-using KSP.UI.Screens;
 
 namespace SOS
 {

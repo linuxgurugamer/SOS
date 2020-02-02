@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
-using KSP_Log;
-using KSP.Localization;
-using KSP.UI.Screens;
 
 namespace SOS
 {
