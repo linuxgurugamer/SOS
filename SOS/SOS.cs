@@ -290,7 +290,7 @@ namespace SOS
             if (KRASHWrapper.KRASHAvailable && KRASHWrapper.simulationActive())
             {
                 GUILayout.FlexibleSpace();
-                if (GUILayout.Button(Localizer.Format("SOS_001"), buttonSkin))
+                if (GUILayout.Button(Localizer.Format("#SOS_001"), buttonSkin))
                 {
                     CloseWindow(true);
                 }
