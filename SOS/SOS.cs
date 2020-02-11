@@ -171,7 +171,7 @@ namespace SOS
         private Rect _revertRect;
         private Rect _saveGameRect = new Rect((Screen.width - SAVEGAMEWIDTH) / 2, (Screen.height - SAVEGAMEHEIGHT) / 2, SAVEGAMEWIDTH, SAVEGAMEHEIGHT);
         internal bool saveStaging = false, saveActions = false, saveAxis = false;
-        bool axesChanged = false, actionsChanged = false, stagingChanged = false;
+        internal bool axesChanged = false, actionsChanged = false, stagingChanged = false;
         bool simTermination = false;
         bool showSaveGame = false;
         void OnGUI()
@@ -415,6 +415,8 @@ namespace SOS
                 GUILayout.FlexibleSpace();
                 GUILayout.EndHorizontal();
             }
+            //else
+            //    saveStaging = false;
             if (actionsChanged)
             {
                 text = Localizer.Format("#SOS_011");
@@ -424,6 +426,8 @@ namespace SOS
                 saveActions = GUILayout.Toggle(saveActions, text, GUILayout.ExpandWidth(true));
                 GUILayout.EndHorizontal();
             }
+            //else 
+            //    saveActions = false;
             if (axesChanged)
             {
                 text = Localizer.Format("#SOS_012");
@@ -433,6 +437,8 @@ namespace SOS
                 saveAxis = GUILayout.Toggle(saveAxis, text, GUILayout.ExpandWidth(true));
                 GUILayout.EndHorizontal();
             }
+            //else
+            //    saveAxis = false;
 
             GUI.DragWindow();
         }

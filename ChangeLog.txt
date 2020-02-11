@@ -1,5 +1,9 @@
 ChangeLog
 
+0.0.1.1
+	Fixed staging, axis and actions always being done when reverting even if nothing changed	
+	Disabled restoring changed settings when reverting to launch, subject to further investigation
+
 0.0.1
 	First full release
 

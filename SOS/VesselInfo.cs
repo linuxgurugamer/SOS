@@ -103,14 +103,16 @@ namespace SOS
         {
             if (vesselInfoList.ContainsKey(v.id))
             {
+#if false
                 VesselInfo i = vesselInfoList[v.id];
 
-                if (SOS.fetch.saveActions)
+                if (SOS.fetch.actionsChanged && SOS.fetch.saveActions)
                     i.RestoreActions(v);
-                if (SOS.fetch.saveAxis)
+                if (SOS.fetch.axesChanged && SOS.fetch.saveAxis)
                     i.RestoreAxes(v);
-                if (SOS.fetch.saveStaging)
+                if (SOS.fetch.stagingChanged && SOS.fetch.saveStaging)
                     i.RestoreStaging(v);
+#endif
             }
             else
             {

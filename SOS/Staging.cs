@@ -109,6 +109,7 @@ namespace SOS
 
         void RestoreStaging(Vessel v)
         {
+            SOS.Log.Info("RestoreStaging");
             RestoreStaging(v.Parts, v.rootPart);
         }
 
@@ -176,6 +177,7 @@ namespace SOS
                 foreach (var p in sd[-1].partList)
                     p.inverseStage = -1;
 #endif
+
             for (int i = minStage; i <= maxStage; i++)
             {
                 if (sd.ContainsKey(i))
