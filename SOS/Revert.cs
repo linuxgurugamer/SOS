@@ -8,8 +8,9 @@ namespace SOS
 
         public void Revert()
         {
+            Log.Info("Revert, setting revertMenu true");
             revertMenu = true;
-            _revertRect = new Rect((Screen.width - REVERTWIDTH) / 2, (Screen.height - REVERTHEIGHT) / 2, REVERTWIDTH, REVERTHEIGHT);
+            _revertRect = new Rect((Screen.width - REVERTWIDTH) / 2, (Screen.height - REVERTHEIGHT) / 2, REVERTWIDTH, REVERTHEIGHT); // initted here to properly position the window
         }
 
         private void drawRevert(int id)

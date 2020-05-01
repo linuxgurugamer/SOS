@@ -25,8 +25,8 @@ and a pause after changing all three will be:
 
 https://i.imgur.com/YekEhGG.png
 
-The (BLSG not available) refers to Better Load Save Game, which will be released in a few 
-days.  Due to the way the menu is implemented, I can't access the normal Load Save Game menu item.
+The (BLSG not available) refers to Better Load Save Game, which is used to replace the stock Load Save.
+Due to the way the menu is implemented, I can't access the normal Load Save Game menu item.
 
 Note that this mod is fully Localized.  It mostly uses stock labels, there are a seven custom labels in 
 the dictionary.cfg file, currently en-us only.  Translations are welcome

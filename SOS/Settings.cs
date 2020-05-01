@@ -29,6 +29,9 @@ namespace SOS
             toolTip = "If enabled, will automatically enable the toggle to save Axes when reverting")]
         public bool defaultSaveAxes = true;
 
+        [GameParameters.CustomParameterUI("Debug mode",
+            toolTip = "If enabled, will show a toolbar button in the editor and flight scenes, used to dump data to the log.\nThis is intended to be used if the mod has a problem with a particular vessel ")]
+        public bool debugMode = false;
 
 
         public override void SetDifficultyPreset(GameParameters.Preset preset)

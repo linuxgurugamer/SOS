@@ -49,8 +49,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>R:\KSP_1.8.0_dev\GameData\KRASH\Plugins\KRASH.dll</HintPath>
     </Reference>
-    <Reference Include="KSP_Log">
-      <HintPath>R:\KSP_1.8.0_dev\GameData\SpaceTuxLibrary\Plugins\KSP_Log.dll</HintPath>
+    <Reference Include="KSP_Log, Version=0.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>R:\KSP_1.8.1_dev\GameData\SpaceTuxLibrary\Plugins\KSP_Log.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="ToolbarControl">
@@ -68,7 +69,7 @@
     <Compile Include="Editor.cs" />
     <Compile Include="Events.cs" />
     <Compile Include="InstallChecker.cs" />
-    <Compile Include="RegisterToolbar.cs" />
+    <Compile Include="DebugStuff.cs" />
     <Compile Include="SOS.cs" />
     <Compile Include="KRASHWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

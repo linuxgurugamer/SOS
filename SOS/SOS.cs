@@ -4,6 +4,8 @@ using KSP_Log;
 using KSP.Localization;
 using KSP.UI.Screens;
 using KRASH;
+using Vectrosity;
+using ToolbarControl_NS;
 
 namespace SOS
 {
@@ -51,12 +53,34 @@ namespace SOS
             //GameEvents.onVesselWasModified.Add(onVesselWasModified);
 
             GameEvents.StageManager.OnGUIStageSequenceModified.Add(OnGUIStageSequenceModified);
+            GameEvents.OnGameSettingsApplied.Add(OnGameSettingsApplied);
 
             DontDestroyOnLoad(this);
 
             saveStaging = HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().defaultSaveStaging;
             saveActions = HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().defaultSaveActions;
             saveAxis = HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().defaultSaveAxes;
+        }
+
+        void OnGameSettingsApplied()
+        {
+            Log.Info("OnGameSettingsApplied, debugMode: " + HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().debugMode);
+            if (DebugStuff.fetch != null)
+            {
+                Log.Info("OnGameSettingsApplied 1");
+                if (HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().debugMode && DebugStuff.fetch.toolbarControl == null)
+                {
+                    Log.Info("OnGameSettingsApplied 1.1");
+                    DebugStuff.fetch.InitializeToolbar();
+                }
+                Log.Info("OnGameSettingsApplied 2");
+                if (!HighLogic.CurrentGame.Parameters.CustomParams<S_O_S>().debugMode && DebugStuff.fetch.toolbarControl != null)
+                {
+                    Log.Info("OnGameSettingsApplied 2.1");
+                    DebugStuff.fetch.OnDestroy();
+                }
+                Log.Info("OnGameSettingsApplied 3");
+            }
         }
 
         void OnGUIStageSequenceModified()
@@ -85,6 +109,7 @@ namespace SOS
             GameEvents.onVesselChange.Remove(onVesselChange);
             //GameEvents.onVesselWasModified.Remove(onVesselWasModified);
             GameEvents.StageManager.OnGUIStageSequenceModified.Remove(OnGUIStageSequenceModified);
+            GameEvents.OnGameSettingsApplied.Remove(OnGameSettingsApplied);
         }
 
         /*******************************************************************************/
@@ -182,14 +207,14 @@ namespace SOS
 
                 if (showSaveGame)
                 {
-                    _saveGameRect = GUILayout.Window(this.GetInstanceID() + 1, _saveGameRect, new GUI.WindowFunction(ShowSaveGameDialog), "Quicksave As...", new GUILayoutOption[0]);
+                    _saveGameRect = GUILayout.Window(this.GetInstanceID() + 1, _saveGameRect, ShowSaveGameDialog, "Quicksave As...", new GUILayoutOption[0]);
 
                 }
                 else
                 {
                     if (revertMenu)
                     {
-                        _revertRect = GUILayout.Window(this.GetInstanceID() + 1, _revertRect, new GUI.WindowFunction(drawRevert), "Reverting Flight", new GUILayoutOption[0]);
+                        _revertRect = GUILayout.Window(this.GetInstanceID() + 2, _revertRect,drawRevert, "Reverting Flight", new GUILayoutOption[0]);
 
                     }
                     else
@@ -204,7 +229,7 @@ namespace SOS
                             }
                             // Checking the time here protects against keybounce and the same key being read 2x
 
-                            _windowRect = GUILayout.Window(this.GetInstanceID() + 1, _windowRect, new GUI.WindowFunction(DisplayPauseMenu), "Game Paused", new GUILayoutOption[0]);
+                            _windowRect = GUILayout.Window(this.GetInstanceID() + 3, _windowRect, DisplayPauseMenu, "Game Paused", new GUILayoutOption[0]);
                         }
                     }
                 }

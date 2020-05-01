@@ -1,5 +1,11 @@
 ChangeLog
 
+0.0.1.2
+	Made each window's id unique
+	Added a debug mode, settable in the setting screen, to control whether the data dump buttons are shown in Flight and Editor
+	Removed GUI.WindowFunction from the calls in OnGUI
+	Made the DebugStuff class always loaded
+
 0.0.1.1
 	Fixed staging, axis and actions always being done when reverting even if nothing changed	
 	Disabled restoring changed settings when reverting to launch, subject to further investigation
