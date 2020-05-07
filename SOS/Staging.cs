@@ -77,9 +77,12 @@ namespace SOS
             Dictionary<string, StagingInfo> stagingList = new Dictionary<string, StagingInfo>();
             foreach (var p in partsList)
             {
-                StagingInfo si = new StagingInfo(p);
-                stagingList.Add(p.persistentId.ToString(), si);
-                SOS.Log.Info("GetAllStaging, part/stage: " + p.partInfo.title + ", inverseStage: " + si.inverseStage + ", originalStage: " + si.originalStage);
+                if (!stagingList.ContainsKey(p.persistentId.ToString()))
+                {
+                    StagingInfo si = new StagingInfo(p);
+                    stagingList.Add(p.persistentId.ToString(), si);
+                    SOS.Log.Info("GetAllStaging, part/stage: " + p.partInfo.title + ", inverseStage: " + si.inverseStage + ", originalStage: " + si.originalStage);
+                }
             }
             return stagingList;
         }
