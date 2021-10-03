@@ -1,5 +1,9 @@
 ChangeLog
 
+0.0.1.4
+	Added AssemblyFileVersion
+	Updated version file for 1.12
+
 0.0.1.3
 	Added check for key already being in stagingList (shouldn't be needed, unless there are two parts with the same persistentId)
 
