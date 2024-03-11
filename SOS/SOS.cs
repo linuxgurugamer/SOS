@@ -331,6 +331,14 @@ namespace SOS
                 GUILayout.EndHorizontal();
                 GUILayout.BeginHorizontal();
                 GUILayout.FlexibleSpace();
+                if (GUILayout.Button(Localizer.Format("#autoLOC_360545"), buttonSkin))
+                {
+                    Revert();
+                }
+                GUILayout.FlexibleSpace();
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+                GUILayout.FlexibleSpace();
                 if (GUILayout.Button(Localizer.Format("#autoLOC_360624"), buttonSkin))
                 {
                     GoToSettings();
