@@ -1,5 +1,9 @@
 ChangeLog
 
+0.0.1.5
+	Thanks to github user @kKerbalOne for this:
+		Fixed missing call to Revert() when KRASH Simulation detected
+
 0.0.1.4
 	Added AssemblyFileVersion
 	Updated version file for 1.12
