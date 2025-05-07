@@ -1,5 +1,9 @@
 ChangeLog
 
+0.0.1.6
+	Thanks to github user @averageksp for this:
+		Add German Language Translation to SO
+
 0.0.1.5
 	Thanks to github user @kKerbalOne for this:
 		Fixed missing call to Revert() when KRASH Simulation detected
